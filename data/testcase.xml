@@ -1,0 +1,125 @@
+<testcases>
+    <testcase id="TC-USER-001" name="用户注册功能测试">
+        <description>验证新用户能够成功注册账户</description>
+        <preconditions>系统正常运行，访问注册页面</preconditions>
+        <steps>
+            <step>输入用户名、邮箱和密码</step>
+            <step>确认密码</step>
+            <step>勾选用户协议</step>
+            <step>点击注册按钮</step>
+        </steps>
+        <expected_results>注册成功后，系统自动登录并跳转到用户主页，显示欢迎信息</expected_results>
+        <priority>高</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-002" name="用户登录功能测试">
+        <description>验证已注册用户能够成功登录系统</description>
+        <preconditions>用户已注册，系统正常运行</preconditions>
+        <steps>
+            <step>输入正确的用户名和密码</step>
+            <step>点击登录按钮</step>
+        </steps>
+        <expected_results>登录成功后，系统跳转到用户主页，显示用户信息</expected_results>
+        <priority>高</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-003" name="修改密码功能测试">
+        <description>验证用户能够成功修改自己的密码</description>
+        <preconditions>用户已登录系统</preconditions>
+        <steps>
+            <step>进入个人设置页面</step>
+            <step>输入当前密码</step>
+            <step>输入新密码并确认</step>
+            <step>点击保存按钮</step>
+        </steps>
+        <expected_results>密码修改成功，显示成功提示信息，下次登录需使用新密码</expected_results>
+        <priority>高</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-004" name="忘记密码/密码重置功能测试">
+        <description>验证用户忘记密码后能够通过邮箱重置密码</description>
+        <preconditions>系统正常运行</preconditions>
+        <steps>
+            <step>在登录页面点击"忘记密码"链接</step>
+            <step>输入注册邮箱</step>
+            <step>点击发送重置链接按钮</step>
+            <step>通过邮箱接收重置链接并重置密码</step>
+        </steps>
+        <expected_results>密码重置成功，能够使用新密码登录系统</expected_results>
+        <priority>高</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-005" name="用户信息管理测试">
+        <description>验证用户能够查看和修改个人信息</description>
+        <preconditions>用户已登录系统</preconditions>
+        <steps>
+            <step>进入个人信息页面</step>
+            <step>修改头像、昵称、联系方式等信息</step>
+            <step>点击保存按钮</step>
+        </steps>
+        <expected_results>个人信息修改成功，显示成功提示信息，信息更新显示</expected_results>
+        <priority>中</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-006" name="用户角色管理测试（管理员）">
+        <description>验证管理员能够为用户分配和修改角色</description>
+        <preconditions>管理员用户已登录系统</preconditions>
+        <steps>
+            <step>进入用户管理页面</step>
+            <step>选择一个用户，点击编辑角色按钮</step>
+            <step>为用户分配或修改角色</step>
+            <step>点击保存按钮</step>
+        </steps>
+        <expected_results>用户角色分配成功，显示成功提示信息，用户角色更新显示</expected_results>
+        <priority>高</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-007" name="权限分配功能测试（管理员）">
+        <description>验证管理员能够为角色分配具体权限</description>
+        <preconditions>管理员用户已登录系统</preconditions>
+        <steps>
+            <step>进入角色权限管理页面</step>
+            <step>选择一个角色，勾选或取消勾选具体权限</step>
+            <step>点击保存按钮</step>
+        </steps>
+        <expected_results>角色权限分配成功，显示成功提示信息，角色权限更新显示</expected_results>
+        <priority>高</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-008" name="用户状态管理测试（管理员）">
+        <description>验证管理员能够启用或禁用用户账户</description>
+        <preconditions>管理员用户已登录系统</preconditions>
+        <steps>
+            <step>进入用户管理页面</step>
+            <step>选择一个用户，点击启用/禁用按钮</step>
+            <step>确认操作</step>
+        </steps>
+        <expected_results>用户状态更新成功，显示成功提示信息，用户状态更新显示，被禁用用户无法登录</expected_results>
+        <priority>高</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-009" name="用户搜索和筛选功能测试（管理员）">
+        <description>验证管理员能够通过关键词搜索用户并按条件筛选</description>
+        <preconditions>管理员用户已登录系统</preconditions>
+        <steps>
+            <step>进入用户管理页面</step>
+            <step>在搜索框输入关键词搜索用户</step>
+            <step>使用筛选条件（如角色、状态等）筛选用户</step>
+        </steps>
+        <expected_results>搜索结果正确显示，筛选条件应用后显示符合条件的用户列表</expected_results>
+        <priority>中</priority>
+    </testcase>
+    
+    <testcase id="TC-USER-010" name="用户批量操作测试（管理员）">
+        <description>验证管理员能够对多个用户进行批量操作</description>
+        <preconditions>管理员用户已登录系统，用户管理页面显示多个用户</preconditions>
+        <steps>
+            <step>进入用户管理页面</step>
+            <step>选择多个用户</step>
+            <step>选择批量操作（如批量禁用、批量删除等）</step>
+            <step>确认操作</step>
+        </steps>
+        <expected_results>批量操作成功执行，显示成功提示信息，所有选中用户的状态或数据相应更新</expected_results>
+        <priority>中</priority>
+    </testcase>
+</testcases>

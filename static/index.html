@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!-- 文档类型声明：指定为HTML5标准 -->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 字符编码设置：UTF-8，支持全球大部分字符 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 响应式配置：适配移动设备，设置视口宽度为设备宽度，初始缩放比例1.0 -->
+    <title>TestNexus - 专业测试平台</title>
+    <!-- 页面标题：显示在浏览器标签栏 -->
+
+    <!-- 外部资源引入：Font Awesome图标库（用于页面所有图标） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 外部资源引入：Google字体（Roboto用于常规文本，Source Code Pro用于代码相关文本） -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- 内部样式表引入：自定义页面样式 -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- 技术风格背景图案：纯装饰性元素，提升页面科技感 -->
+    <div class="tech-pattern"></div>
+    <!-- 网格覆盖层：纯装饰性元素，增强页面层次感 -->
+    <div class="grid-overlay"></div>
+
+    <!-- 应用主容器：包裹页面所有核心内容，用于整体布局控制 -->
+    <div class="app-container">
+        <!-- 侧边导航栏：用于页面核心功能导航 -->
+        <div class="sidebar">
+            <!-- 侧边栏头部：包含平台Logo -->
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-microchip"></i> <!-- 芯片图标：体现科技/测试属性 -->
+                    <span class="logo-text">TestNexus</span> <!-- 平台名称 -->
+                </div>
+            </div>
+
+            <!-- 侧边栏菜单区：按功能模块分组 -->
+            <div class="sidebar-menu">
+                <!-- 第一组菜单：核心功能（测试平台核心操作入口） -->
+                <div class="menu-section">
+                    <div class="section-title">核心功能</div> <!-- 菜单组标题 -->
+                    <!-- 菜单项：仪表盘（当前激活状态，显示当前页面） -->
+                   <div class="menu-item active"> <!-- 当前页面，保留active -->
+                      <a href="index.html" style="color: inherit; text-decoration: none;">
+                            <i class="fas fa-index"></i>
+                            <span>仪表盘</span>
+                      </a>
+                   </div>
+
+                    <!-- 菜单项：用例管理（带跳转链接） -->
+                    <div class="menu-item">
+                        <a href="/page/use_case_management.html" style="color: inherit; text-decoration: none;">
+                            <i class="fas fa-sitemap"></i> <!-- 站点地图图标：对应用例层级 -->
+                            <span>用例管理</span>
+                        </a>
+                    </div>
+
+                    <!-- 菜单项：脚本管理 -->
+                    <div class="menu-item">
+                        <i class="fas fa-code"></i> <!-- 代码图标：对应脚本属性 -->
+                        <span>脚本管理</span>
+                    </div>
+
+                    <!-- 菜单项：执行引擎 -->
+                    <div class="menu-item">
+                        <i class="fas fa-play-circle"></i> <!-- 播放图标：对应执行操作 -->
+                        <span>执行引擎</span>
+                    </div>
+                </div>
+
+                <!-- 第二组菜单：支持功能（辅助测试的功能模块） -->
+                <div class="menu-section">
+                    <div class="section-title">支持功能</div>
+                    <!-- 菜单项：环境管理 -->
+                    <div class="menu-item">
+                        <i class="fas fa-server"></i> <!-- 服务器图标：对应环境属性 -->
+                        <span>环境管理</span>
+                    </div>
+
+                    <!-- 菜单项：数据管理 -->
+                    <div class="menu-item">
+                        <i class="fas fa-database"></i> <!-- 数据库图标：对应数据属性 -->
+                        <span>数据管理</span>
+                    </div>
+
+                    <!-- 菜单项：报告分析 -->
+                    <div class="menu-item">
+                        <i class="fas fa-chart-network"></i> <!-- 图表图标：对应分析属性 -->
+                        <span>报告分析</span>
+                    </div>
+                </div>
+
+                <!-- 第三组菜单：系统设置（平台配置相关） -->
+                <div class="menu-section">
+                    <div class="section-title">系统设置</div>
+                    <!-- 菜单项：用户与权限 -->
+                    <div class="menu-item">
+                        <i class="fas fa-users-cog"></i> <!-- 用户设置图标：对应权限管理 -->
+                        <span>用户与权限</span>
+                    </div>
+
+                    <!-- 菜单项：系统设置 -->
+                    <div class="menu-item">
+                        <i class="fas fa-cogs"></i> <!-- 齿轮图标：对应系统配置 -->
+                        <span>系统设置</span>
+                    </div>
+
+                    <!-- 菜单项：帮助中心 -->
+                    <div class="menu-item">
+                        <i class="fas fa-life-ring"></i> <!-- 救生圈图标：对应帮助属性 -->
+                        <span>帮助中心</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 侧边栏底部：当前登录用户信息 -->
+            <div class="sidebar-footer">
+                <div class="user-avatar">TE</div> <!-- 用户头像：显示用户名首字母 -->
+                <div class="user-info">
+                    <div class="user-name">测试工程师</div> <!-- 用户名 -->
+                    <div class="user-role">管理员</div> <!-- 用户角色 -->
+                </div>
+                <div class="action-btn">
+                    <i class="fas fa-cog"></i> <!-- 用户设置按钮：打开个人配置 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 主内容区域：包含顶部导航和核心内容 -->
+        <div class="main-content">
+            <!-- 顶部导航栏：面包屑导航和快捷操作 -->
+            <div class="topbar">
+                <!-- 面包屑导航：显示当前页面在平台中的层级路径 -->
+               <!-- 2. 顶部面包屑 - 若有“用例管理”入口，也增加链接（可选） -->
+                <div class="breadcrumb">
+                   <a href="/page/index.html">仪表盘</a>
+                    <span>/</span>
+                   <a href="/page/use_case_management.html">用例管理</a> <!-- 增加这行，实现从仪表盘跳用例管理 -->
+                </div>
+
+                <!-- 顶部操作区：搜索、通知、快捷按钮 -->
+                <div class="topbar-actions">
+                    <!-- 搜索栏：搜索平台内的用例、脚本、报告等资源 -->
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i> <!-- 搜索图标 -->
+                        <input type="text" placeholder="搜索用例、脚本、报告..."> <!-- 搜索输入框 -->
+                    </div>
+
+                    <!-- 通知图标：显示未读通知数量 -->
+                    <div class="notification">
+                        <i class="fas fa-bell"></i> <!-- 铃铛图标：对应通知 -->
+                        <div class="badge">5</div> <!-- 未读数量标记：5条未读 -->
+                    </div>
+
+                    <!-- 快捷操作按钮组 -->
+                    <div class="quick-actions">
+                        <div class="action-btn">
+                            <i class="fas fa-sync-alt"></i> <!-- 刷新图标：刷新当前页面 -->
+                        </div>
+                        <div class="action-btn">
+                            <i class="fas fa-plus"></i> <!-- 加号图标：新建资源（如用例、脚本） -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 内容包装器：包裹页面所有核心业务内容 -->
+            <div class="content-wrapper">
+                <!-- 页面头部：标题和主要操作按钮 -->
+                <div class="page-header">
+                    <h1 class="page-title">测试平台概览</h1> <!-- 页面主标题 -->
+                    <div class="page-actions">
+                        <!-- 次要按钮：导出报告（轮廓样式，优先级较低） -->
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i> 导出报告
+                        </button>
+                        <!-- 主要按钮：新建测试（实心样式，优先级较高） -->
+                        <button class="btn btn-primary">
+                            <i class="fas fa-bolt"></i> 新建测试
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 统计卡片区域：展示核心数据指标（4列布局） -->
+                <div class="grid-container">
+                    <!-- 统计卡片1：测试用例总数 -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-sitemap"></i> <!-- 对应“用例”的图标 -->
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">1,248</div> <!-- 具体数值：1248条用例 -->
+                            <div class="stat-label">测试用例</div> <!-- 指标名称 -->
+                        </div>
+                    </div>
+
+                    <!-- 统计卡片2：今日执行次数 -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-play"></i> <!-- 对应“执行”的图标 -->
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">324</div> <!-- 具体数值：今日执行324次 -->
+                            <div class="stat-label">今日执行</div> <!-- 指标名称 -->
+                        </div>
+                    </div>
+
+                    <!-- 统计卡片3：未解决缺陷数 -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-bug"></i> <!-- 对应“缺陷”的图标 -->
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">42</div> <!-- 具体数值：42个未解决缺陷 -->
+                            <div class="stat-label">未解决缺陷</div> <!-- 指标名称 -->
+                        </div>
+                    </div>
+
+                    <!-- 统计卡片4：失败用例数 -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-times-circle"></i> <!-- 对应“失败”的图标 -->
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">12</div> <!-- 具体数值：12条失败用例 -->
+                            <div class="stat-label">失败用例</div> <!-- 指标名称 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 两列布局区域：左侧“最近执行记录”，右侧“用例管理” -->
+                <div class="grid-container">
+                    <!-- 左侧卡片：最近执行记录 -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">最近执行记录</div> <!-- 卡片标题 -->
+                            <!-- 更多操作按钮：点击展开更多选项（如刷新、筛选） -->
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <!-- 测试任务数据容器：预留JavaScript动态加载区域 -->
+                            <div id="job-container">
+                                <!-- 这里将通过JavaScript动态加载测试任务数据 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧卡片：用例管理（树状视图） -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">用例管理</div> <!-- 卡片标题 -->
+                            <!-- 更多操作按钮 -->
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <!-- 测试用例数据容器：预留JavaScript动态加载区域 -->
+                            <div id="test-case-container">
+                                <!-- 这里将通过JavaScript动态加载测试用例数据 -->
+                            </div>
+
+                            <!-- 静态树状视图：展示用例的层级结构 -->
+                            <div class="tree-view">
+                                <!-- 一级节点：用户管理模块（已展开） -->
+                                <div class="tree-node expanded">
+                                    <span class="toggle"><i class="fas fa-chevron-down"></i></span> <!-- 展开/折叠按钮：当前展开 -->
+                                    <i class="fas fa-folder"></i> <!-- 文件夹图标：表示“模块” -->
+                                    <span>用户管理模块</span>
+                                </div>
+                                <!-- 二级节点：用户管理模块的子节点 -->
+                                <div class="tree-children">
+                                    <!-- 二级节点1：登录认证（未展开） -->
+                                    <div class="tree-node">
+                                        <span class="toggle"><i class="fas fa-chevron-right"></i></span> <!-- 展开/折叠按钮：当前折叠 -->
+                                        <i class="fas fa-folder"></i> <!-- 文件夹图标：表示“子模块” -->
+                                        <span>登录认证</span>
+                                    </div>
+                                    <!-- 三级节点：登录认证的子节点（用例） -->
+                                    <div class="tree-children">
+                                        <!-- 三级节点1：用户登录功能测试（当前选中） -->
+                                        <div class="tree-node active">
+                                            <i class="fas fa-file-code"></i> <!-- 文件图标：表示“具体用例” -->
+                                            <span>用户登录功能测试</span>
+                                            <!-- 标签容器：标记用例属性 -->
+                                            <div class="tags-container">
+                                                <div class="tag">核心功能</div> <!-- 标签1：功能类型 -->
+                                                <div class="tag">P0</div> <!-- 标签2：优先级（最高级） -->
+                                            </div>
+                                        </div>
+                                        <!-- 三级节点2：忘记密码功能测试 -->
+                                        <div class="tree-node">
+                                            <i class="fas fa-file-code"></i>
+                                            <span>忘记密码功能测试</span>
+                                        </div>
+                                    </div>
+                                    <!-- 二级节点2：用户资料（未展开） -->
+                                    <div class="tree-node">
+                                        <span class="toggle"><i class="fas fa-chevron-right"></i></span>
+                                        <i class="fas fa-folder"></i>
+                                        <span>用户资料</span>
+                                    </div>
+                                </div>
+
+                                <!-- 一级节点2：订单管理模块（未展开） -->
+                                <div class="tree-node">
+                                    <span class="toggle"><i class="fas fa-chevron-right"></i></span>
+                                    <i class="fas fa-folder"></i>
+                                    <span>订单管理模块</span>
+                                </div>
+
+                                <!-- 一级节点3：支付模块（未展开） -->
+                                <div class="tree-node">
+                                    <span class="toggle"><i class="fas fa-chevron-right"></i></span>
+                                    <i class="fas fa-folder"></i>
+                                    <span>支付模块</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 脚本管理卡片：表格形式展示脚本列表及操作 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">脚本管理</div> <!-- 卡片标题 -->
+                        <!-- 脚本操作按钮组 -->
+                        <div>
+                            <!-- 次要按钮：上传脚本 -->
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-upload"></i> 上传脚本
+                            </button>
+                            <!-- 主要按钮：同步仓库（如Git仓库） -->
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fab fa-git-alt"></i> 同步仓库
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- 标签页：按脚本类型分类筛选 -->
+                        <div class="tabs">
+                            <div class="tab active">所有脚本</div> <!-- 当前激活：显示所有脚本 -->
+                            <div class="tab">Web自动化</div> <!-- 筛选：Web自动化脚本 -->
+                            <div class="tab">API测试</div> <!-- 筛选：API测试脚本 -->
+                            <div class="tab">移动端测试</div> <!-- 筛选：移动端测试脚本 -->
+                        </div>
+
+                        <!-- 表格容器：带滚动条（防止内容溢出） -->
+                        <div class="table-responsive">
+                            <table class="table">
+                                <!-- 表格表头：定义列含义 -->
+                                <thead>
+                                    <tr>
+                                        <th>脚本名称</th> <!-- 脚本文件名 -->
+                                        <th>类型</th> <!-- 脚本所属类型 -->
+                                        <th>最后修改</th> <!-- 脚本最后更新时间 -->
+                                        <th>状态</th> <!-- 脚本验证状态 -->
+                                        <th>操作</th> <!-- 可执行的操作 -->
+                                    </tr>
+                                </thead>
+                                <!-- 表格内容：具体脚本数据 -->
+                                <tbody>
+                                    <!-- 脚本1：login_test.py -->
+                                    <tr>
+                                        <td>login_test.py</td> <!-- 脚本名 -->
+                                        <td>Web自动化</td> <!-- 类型 -->
+                                        <td>2023-10-15</td> <!-- 最后修改时间 -->
+                                        <td><span class="status-badge status-success">已验证</span></td> <!-- 状态：成功（绿色） -->
+                                        <td>
+                                            <!-- 操作按钮1：执行脚本 -->
+                                            <button class="btn btn-outline btn-sm">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <!-- 操作按钮2：编辑脚本 -->
+                                            <button class="btn btn-outline btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <!-- 操作按钮3：删除脚本（带唯一ID，用于JS绑定事件） -->
+                                            <button class="btn btn-outline btn-sm " id="SCRIPT-62B4ADC1">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- 脚本2：payment_api_test.js -->
+                                    <tr>
+                                        <td>payment_api_test.js</td>
+                                        <td>API测试</td>
+                                        <td>2023-10-14</td>
+                                        <td><span class="status-badge status-success">已验证</span></td>
+                                        <td>
+                                            <button class="btn btn-outline btn-sm">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <button class="btn btn-outline btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- 脚本3：mobile_login_test.java -->
+                                    <tr>
+                                        <td>mobile_login_test.java</td>
+                                        <td>移动端测试</td>
+                                        <td>2023-10-12</td>
+                                        <td><span class="status-badge status-warning">需更新</span></td> <!-- 状态：警告（黄色） -->
+                                        <td>
+                                            <button class="btn btn-outline btn-sm">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <button class="btn btn-outline btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 环境管理卡片：卡片形式展示各测试环境信息 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">环境管理</div> <!-- 卡片标题 -->
+                        <!-- 主要按钮：新建环境 -->
+                        <button class="btn btn-primary btn-sm">
+                            <i class="fas fa-plus"></i> 新建环境
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- 环境卡片容器：3列布局 -->
+                        <div class="grid-container">
+                            <!-- 环境卡片1：DEV环境（开发环境） -->
+                            <div class="environment-card">
+                                <div class="environment-header">
+                                    <div class="environment-name">DEV环境</div> <!-- 环境名称 -->
+                                    <span class="status-badge status-success">运行中</span> <!-- 状态：正常（绿色） -->
+                                </div>
+                                <div class="environment-body">
+                                    <!-- 环境属性1：访问URL -->
+                                    <div class="environment-info">
+                                        <div class="info-label">URL</div> <!-- 属性标签 -->
+                                        <div class="info-value">https://dev.example.com</div> <!-- 属性值 -->
+                                    </div>
+                                    <!-- 环境属性2：数据库信息 -->
+                                    <div class="environment-info">
+                                        <div class="info-label">数据库</div>
+                                        <div class="info-value">MySQL 8.0</div>
+                                    </div>
+                                    <!-- 环境标签：标记环境支持的服务类型 -->
+                                    <div class="tags-container">
+                                        <div class="tag">Web服务</div>
+                                        <div class="tag">API服务</div>
+                                    </div>
+                                    <!-- 环境操作按钮（右对齐） -->
+                                    <div class="text-right mt-3">
+                                        <!-- 操作1：健康检查 -->
+                                        <button class="btn btn-outline btn-sm">
+                                            <i class="fas fa-heartbeat"></i> 健康检查
+                                        </button>
+                                        <!-- 操作2：部署 -->
+                                        <button class="btn btn-outline btn-sm">
+                                            <i class="fas fa-rocket"></i> 部署
+                                        </button>
+                                        <!-- 操作3：删除环境（带环境ID，用于JS绑定事件） -->
+                                        <button class="btn btn-outline btn-sm delete-env-btn" data-env-id="1">
+                                            <i class="fas fa-trash-alt"></i> 删除
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 环境卡片2：QA环境（测试环境） -->
+                            <div class="environment-card">
+                                <div class="environment-header">
+                                    <div class="environment-name">QA环境</div>
+                                    <span class="status-badge status-success">运行中</span>
+                                </div>
+                                <div class="environment-body">
+                                    <div class="environment-info">
+                                        <div class="info-label">URL</div>
+                                        <div class="info-value">https://qa.example.com</div>
+                                    </div>
+                                    <div class="environment-info">
+                                        <div class="info-label">数据库</div>
+                                        <div class="info-value">PostgreSQL 14</div>
+                                    </div>
+                                    <div class="tags-container">
+                                        <div class="tag">Web服务</div>
+                                        <div class="tag">API服务</div>
+                                        <div class="tag">移动端</div>
+                                    </div>
+                                    <div class="text-right mt-3">
+                                        <button class="btn btn-outline btn-sm">
+                                            <i class="fas fa-heartbeat"></i> 健康检查
+                                        </button>
+                                        <button class="btn btn-outline btn-sm">
+                                            <i class="fas fa-rocket"></i> 部署
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 环境卡片3：STAGING环境（预发布环境） -->
+                            <div class="environment-card">
+                                <div class="environment-header">
+                                    <div class="environment-name">STAGING环境</div>
+                                    <span class="status-badge status-danger">离线</span> <!-- 状态：异常（红色） -->
+                                </div>
+                                <div class="environment-body">
+                                    <div class="environment-info">
+                                        <div class="info-label">URL</div>
+                                        <div class="info-value">https://staging.example.com</div>
+                                    </div>
+                                    <div class="environment-info">
+                                        <div class="info-label">数据库</div>
+                                        <div class="info-value">MongoDB 5.0</div>
+                                    </div>
+                                    <div class="tags-container">
+                                        <div class="tag">完整环境</div>
+                                        <div class="tag">预发布</div>
+                                    </div>
+                                    <div class="text-right mt-3">
+                                        <button class="btn btn-outline btn-sm">
+                                            <i class="fas fa-heartbeat"></i> 健康检查
+                                        </button>
+                                        <button class="btn btn-outline btn-sm">
+                                            <i class="fas fa-rocket"></i> 部署
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 内部JavaScript文件：处理页面交互逻辑（如动态加载数据、按钮事件） -->
+    <script src="/static/main.js"></script>
+</body>
+</html>

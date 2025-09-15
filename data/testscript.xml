@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scripts>
+
+
+
+
+
+
+<script id="SCRIPT-B77EC83C" name="dama.py" type="Web自动化"><description>上传的Web自动化测试脚本</description><author>上传用户</author><last_modified>2025-09-12 09:49:15</last_modified><status>需更新</status><framework>未知</framework><language>PY</language><version>1.0.0</version><tags>上传脚本</tags><pass_rate>0%</pass_rate><execution_time>未知</execution_time></script><script id="SCRIPT-616F4F49" name="run.py" type="Web自动化"><description>上传的Web自动化测试脚本</description><author>上传用户</author><last_modified>2025-09-12 16:34:52</last_modified><status>开发中</status><framework>未知</framework><language>PY</language><version>1.0.0</version><tags>上传脚本</tags><pass_rate>0%</pass_rate><execution_time>未知</execution_time></script><script id="SCRIPT-F9FAE873" name="tools.py" type="Web自动化"><description>上传的Web自动化测试脚本</description><author>上传用户</author><last_modified>2025-09-12 16:34:57</last_modified><status>开发中</status><framework>未知</framework><language>PY</language><version>1.0.0</version><tags>上传脚本</tags><pass_rate>0%</pass_rate><execution_time>未知</execution_time></script><script id="SCRIPT-F27750F9" name="test_user.py" type="Web自动化"><description>上传的Web自动化测试脚本</description><author>上传用户</author><last_modified>2025-09-15 14:22:57</last_modified><status>已验证</status><framework>未知</framework><language>PY</language><version>1.0.0</version><tags>上传脚本</tags><pass_rate>100%</pass_rate><execution_time>未知</execution_time></script></scripts>

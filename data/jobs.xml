@@ -1,0 +1,65 @@
+<jobs>
+    <job id="JOB-001" name="用户管理模块回归测试" status="成功">
+        <testcase_ids>TC-USER-001, TC-USER-002, TC-USER-003</testcase_ids>
+        <start_time>2025-09-09 09:00:00</start_time>
+        <end_time>2025-09-09 09:30:15</end_time>
+        <duration>30分15秒</duration>
+        <executor>自动化测试系统</executor>
+        <environment>测试环境</environment>
+        <passed>3</passed>
+        <failed>0</failed>
+        <skipped>0</skipped>
+    </job>
+    
+    <job id="JOB-002" name="用户注册功能性能测试" status="成功">
+        <testcase_ids>TC-USER-001</testcase_ids>
+        <start_time>2025-09-09 10:15:00</start_time>
+        <end_time>2025-09-09 10:45:30</end_time>
+        <duration>30分30秒</duration>
+        <executor>性能测试工具</executor>
+        <environment>性能测试环境</environment>
+        <passed>1</passed>
+        <failed>0</failed>
+        <skipped>0</skipped>
+        <concurrent_users>100</concurrent_users>
+        <avg_response_time>560ms</avg_response_time>
+    </job>
+    
+    <job id="JOB-003" name="用户权限管理测试" status="失败">
+        <testcase_ids>TC-USER-006, TC-USER-007, TC-USER-008</testcase_ids>
+        <start_time>2025-09-09 13:00:00</start_time>
+        <end_time>2025-09-09 13:20:45</end_time>
+        <duration>20分45秒</duration>
+        <executor>测试工程师</executor>
+        <environment>测试环境</environment>
+        <passed>2</passed>
+        <failed>1</failed>
+        <skipped>0</skipped>
+        <fail_reason>管理员角色无法正确分配用户权限</fail_reason>
+    </job>
+    
+    <job id="JOB-004" name="用户搜索功能测试" status="成功">
+        <testcase_ids>TC-USER-009</testcase_ids>
+        <start_time>2025-09-09 14:30:00</start_time>
+        <end_time>2025-09-09 14:45:20</end_time>
+        <duration>15分20秒</duration>
+        <executor>自动化测试系统</executor>
+        <environment>测试环境</environment>
+        <passed>1</passed>
+        <failed>0</failed>
+        <skipped>0</skipped>
+    </job>
+    
+    <job id="JOB-005" name="用户批量操作测试" status="部分成功">
+        <testcase_ids>TC-USER-010</testcase_ids>
+        <start_time>2025-09-09 15:10:00</start_time>
+        <end_time>2025-09-09 15:30:50</end_time>
+        <duration>20分50秒</duration>
+        <executor>测试工程师</executor>
+        <environment>测试环境</environment>
+        <passed>3</passed>
+        <failed>1</failed>
+        <skipped>1</skipped>
+        <fail_reason>批量删除操作失败，提示数据库连接错误</fail_reason>
+    </job>
+</jobs>
